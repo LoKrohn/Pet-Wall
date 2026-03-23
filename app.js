@@ -28,10 +28,9 @@ function groupEntries(rows) {
 
     for (let i = 1; i < rows.length; i++) {
         const row = rows[i];
-
         const donorName = row[0] ? row[0].split(";").join(", ") : "";
         const tributeName = row[2] ? row[2].split(";").join(", ") : "";
-        const inHonorMemoryOf = row[1] || "";
+        const inHonorMemoryOf = row[1] ? row[1].split(";").join(", ") : "";
         const imageURLs = row[3] ? row[3].split(";") : [];
 
         groupedRows.push([donorName, inHonorMemoryOf, tributeName, imageURLs]);
@@ -147,4 +146,3 @@ function setupAlphabetNavigation(rows, table) {
         });
     });
 }
-
